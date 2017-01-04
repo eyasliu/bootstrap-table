@@ -2760,7 +2760,7 @@
     };
 
     BootstrapTable.prototype.refresh = function (params) {
-        if (params && params.url) {
+        if (params && (params.url || (params.query && params.query.offset < 1))) {
             this.options.pageNumber = 1;
         }
         this.initServer(params && params.silent,
